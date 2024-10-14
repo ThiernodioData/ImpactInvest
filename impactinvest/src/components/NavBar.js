@@ -4,14 +4,15 @@ import logo from '../images/logo1.png'; // Assure-toi de mettre le bon chemin ic
 
 const NavBar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary" >
+
       <div className="container-fluid d-flex justify-content-between">
       <Link className="navbar-brand" to="/">
           <img 
             src={logo} 
             alt="Impact Invest Logo" 
             className="img-fluid" 
-            style={{ maxWidth: '120px', }} // Limite la taille du logo avec Bootstrap
+            style={{ maxWidth: '80px', }} // Limite la taille du logo avec Bootstrap
           />
         </Link>
         <button 
@@ -37,13 +38,14 @@ const NavBar = () => {
               <Link className="nav-link" to="/functioning">Fonctionnement</Link>
             </li>
             <li className="nav-item">
-              <Link className="nav-link" to="/portfolio">Portefeuille</Link>
+              <Link type="button"to="/portfolio" className="btn btn-secondary nav-link" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="bottom" data-bs-content="Bottom popover">Portefeuille</Link>
             </li>
           </ul>
           <form className="d-flex" role="search">
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
-            <button className="btn btn-outline-success" type="submit">Search</button>
+            <button className="btn btn-outline-primary" type="submit">Search</button>
           </form>
+          <button className='btn btn-outline-danger ms-5'><span className="material-symbols-outlined">logout</span></button>
         </div>
       </div>
     </nav>

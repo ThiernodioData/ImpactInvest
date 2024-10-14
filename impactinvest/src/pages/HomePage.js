@@ -1,112 +1,175 @@
 import React from 'react';
+import logo from '../images/logo1.png'; // Assurez-vous de mettre le bon chemin ici
+import bg_gif from '../images/home.gif';
+import img1 from '../images/img4.jpg';
+import img2 from '../images/img3.jpg';
+import img3 from '../images/img8.jpg';
+import gif1 from '../images/gif1.gif';
+
+import Footer from '../components/Footer';
 
 const Homepage = () => {
   return (
-    <div className="impactinvest-welcome">
-      {/* Google Tag Manager (noscript) */}
-      <noscript>
-        <iframe 
-          src="https://www.google-analytics.com/ns.html?id=GTM-NS9GSVHC"
-          height="0" 
-          width="0"
-          style={{ display: 'none', visibility: 'hidden' }}
-          title="google-tag-manager">
-        </iframe>
-      </noscript>
-      {/* End Google Tag Manager (noscript) */}
+    <div
+      className="home"
 
-      <header className="impactinvest-header">
-        <div className="impactinvest-brand">
-          <a href="/" aria-label="Retour à l'accueil">
-            <img 
-              src="logo-impactinvest.png" 
-              alt="ImpactInvest Logo" 
-              className="impactinvest-logo" 
-            />
-          </a>
-        </div>
-      </header>
+    >
+      <div>
+        <main>
+          {/* Section Home 1 */}
+          <div className="arkefip-home text-center  text-white"       style={{backgroundImage: `url(${bg_gif})`,backgroundSize: 'cover',backgroundPosition: 'center', height: '500px', }}>
+            <section className="arkefip-home-intro p-5" id="arkefip-home-intro">
+              <div className="arkefip-home-intro-container">
+                <div className="arkefip-home-intro-content">
+                  <h1 className="fw-bold">Financement participatif au service du développement local</h1>
+                  <h2>Investir de manière responsable, soutenir l'économie locale</h2>
+                  <p>
+                    Depuis sa création, ImpactInvest vous offre une opportunité d'investir de façon transparente et sécurisée. Sur notre plateforme d'investissement participatif basée sur la blockchain, financez des projets locaux à fort impact économique et social, en particulier dans les marchés émergents, comme le Sénégal, à partir de 10 euros.
+                  </p>
+                  <div className="arkefip-home-intro-cta">
+                    <a href="/placer-son-argent/">
+                      <button className="btn btn-outline-primary fw-bold m-5">Découvrir nos projets</button>
+                    </a>
+                    <a href="/investisseur/nouveau/">
+                      <button className="btn btn-primary">Créer un compte</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
 
-      <main className="impactinvest-main">
-        <section className="impactinvest-description">
-          <h1>Investissez dans l'avenir avec ImpactInvest</h1>
-          <p>
-            Imaginez un monde où chaque citoyen, entreprise ou gouvernement peut investir directement 
-            dans des projets prometteurs, en toute transparence et sécurité. ImpactInvest vous offre cette 
-            opportunité grâce à sa plateforme d'investissement basée sur la blockchain.
-          </p>
-        </section>
 
-        <section className="impactinvest-problem">
-          <h2>Le Problème</h2>
-          <p>
-            Les entrepreneurs, en particulier dans des pays comme le Sénégal, peinent à obtenir 
-            des financements rapides, accessibles et transparents. Les processus traditionnels de 
-            financement sont longs, coûteux et complexes. 
-          </p>
-          <p>
-            D'un autre côté, les investisseurs, qu'ils soient citoyens ou organisations, 
-            manquent souvent de confiance dans l'utilisation de leurs fonds. L'accès aux 
-            opportunités d'investissement est souvent réservé aux grandes institutions.
-          </p>
-        </section>
+          {/* Section Home 2 */}
+          <div className="container bg-primary rounded-5 my-5">
+            <div className="row text-white text-center rounded p-4 d-flex flex-row">
+              <div className="col-md-4">
+                <h2 className="fw-bold">551 M€</h2>
+                <p>Montant financé</p>
+                <p>Par les investisseurs</p>
+              </div>
+              <div className="col-md-4">
+                <h2 className="fw-bold">Jusqu'à 9.5%</h2>
+                <p>D'intérêts annuels</p>
+                <p>Avant impôts</p>
+              </div>
+              <div className="col-md-4">
+                <h2 className="fw-bold">471</h2>
+                <p>Projets durables</p>
+                <p>Financés depuis sa création</p>
+              </div>
+            </div>
+          </div>
 
-        <section className="impactinvest-solution">
-          <h2>Notre Solution</h2>
-          <p>
-            ImpactInvest permet aux entrepreneurs de soumettre leurs projets directement sur notre plateforme. 
-            Les investisseurs peuvent financer ces projets de manière sécurisée en Franc CFA, qui sera converti 
-            en cryptomonnaie, et recevront des tokens représentant leur part dans le projet.
-          </p>
-        </section>
+          {/* Section Carousel */}
+          <section>
+            <div id="carouselExampleCaptions" className="carousel slide" data-bs-ride="carousel">
+              <div className="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              </div>
+              <div className="carousel-inner">
+                <div className="carousel-item active" style={{ height: "30em" }}>
+                  <img src={img1} className="d-block w-100" alt="First slide" />
+                  <div className="carousel-caption d-none d-md-block fw-bold">
+                    <h1 className="arkefip-home-expertise-card-title">Investissez dans l'avenir durable</h1>
+                    <p className="arkefip-home-expertise-card-description">
+                      Participez au financement de projets locaux à fort impact social et environnemental, et soutenez des communautés dans des pays émergents.
+                    </p>
+                    <a href="/projects">
+                      <button className="btn btn-primary">Découvrez nos projets</button>
+                    </a>
+                  </div>
+                </div>
+                <div className="carousel-item" style={{ height: "30em" }}>
+                  <img src={img2} className="d-block w-100" alt="Second slide" />
+                  <div className="carousel-caption d-none d-md-block fw-bold">
+                    <h1 className="arkefip-home-expertise-card-title">Un soutien personnalisé</h1>
+                    <p className="arkefip-home-expertise-card-description">
+                      Profitez d’un accompagnement sur mesure de nos experts qui vous guident tout au long de votre investissement.
+                    </p>
+                    <a target="_blank" rel="noopener noreferrer" href="/contact/">
+                      <button className="btn btn-primary">Contactez-nous</button>
+                    </a>
+                  </div>
+                </div>
+                <div className="carousel-item" style={{ height: "30em" }}>
+                  <img src={img3} className="d-block w-100" alt="Third slide" />
+                  <div className="carousel-caption d-none d-md-block fw-bold">
+                    <h1 className="arkefip-home-expertise-card-title">Des projets soigneusement sélectionnés</h1>
+                    <p className="arkefip-home-expertise-card-description">
+                      Seuls les projets respectant nos critères rigoureux d'impact et de rentabilité sont proposés sur la plateforme.
+                    </p>
+                    <a target="_blank" rel="noopener noreferrer" href="/methodology">
+                      <button className="btn btn-primary">Découvrez notre méthodologie</button>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                <span className="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Previous</span>
+              </button>
+              <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                <span className="carousel-control-next-icon" aria-hidden="true"></span>
+                <span className="visually-hidden">Next</span>
+              </button>
+            </div>
+          </section>
 
-        <section className="impactinvest-blockchain">
-          <h2>Pourquoi la Blockchain ?</h2>
-          <ul>
-            <li>
-              <strong>Transparence :</strong> Chaque transaction est enregistrée publiquement, garantissant une traçabilité totale.
-            </li>
-            <li>
-              <strong>Sécurité :</strong> Les fonds sont protégés contre la fraude grâce à des protocoles de cryptographie avancés.
-            </li>
-            <li>
-              <strong>Efficacité :</strong> Les retours sur investissement sont automatisés, sans intermédiaires coûteux.
-            </li>
-          </ul>
-        </section>
+          {/* Section Steps */}
+          <section className="my-5 p-5  impactinvest-home-invest-steps text-white fw-bold text-center" id="impactinvest-home-invest-steps" style={{
+            backgroundImage: `url(${gif1})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}>
+            <div className="impactinvest-home-invest-steps-container">
+              <div className="impactinvest-home-invest-steps-content">
+                <h2 className="section-heading h1">Investissez avec ImpactInvest, étape par étape</h2>
+                <div className="impactinvest-home-invest-steps-steps">
+                  <div className="impactinvest-home-invest-steps-step">
+                    <div className="impactinvest-home-invest-steps-step-icon-container">
+                      <i className="fa fa-shield"></i>
+                    </div>
+                    <div className="impactinvest-home-invest-steps-step-content">
+                      <h2 className="impactinvest-home-invest-steps-step-title">Découvrez nos opportunités d'investissement</h2>
+                      <p>
+                        ImpactInvest vous propose des projets soigneusement sélectionnés à fort impact social et environnemental. Explorez nos opportunités dans l'onglet <a href="/invest" target="_blank">Investir</a>.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="impactinvest-home-invest-steps-step">
+                    <div className="impactinvest-home-invest-steps-step-icon-container">
+                      <i className="fa fa-user-tie"></i>
+                    </div>
+                    <div className="impactinvest-home-invest-steps-step-content">
+                      <h2 className="impactinvest-home-invest-steps-step-title">Échangez avec nos experts</h2>
+                      <p>
+                        Nos conseillers vous accompagnent tout au long de votre parcours d'investissement, garantissant une expérience fluide et personnalisée.
+                      </p>
+                    </div>
+                  </div>
+                  <div className="impactinvest-home-invest-steps-step">
+                    <div className="impactinvest-home-invest-steps-step-icon-container">
+                      <i className="fa fa-chart-line"></i>
+                    </div>
+                    <div className="impactinvest-home-invest-steps-step-content">
+                      <h2 className="impactinvest-home-invest-steps-step-title">Commencez à investir en quelques clics</h2>
+                      <p>
+                        Suivez nos étapes simples pour créer votre compte, effectuer votre premier dépôt et suivre vos rendements.
+                      </p>
+                    </div>
+                  </div>
 
-        <section className="impactinvest-features">
-          <h2>Caractéristiques de la plateforme</h2>
-          <ul>
-            <li>Facilité d'utilisation pour soumettre et financer des projets.</li>
-            <li>Tokenisation des investissements.</li>
-            <li>Redistribution automatisée des bénéfices via des contrats intelligents.</li>
-          </ul>
-        </section>
+                </div>
+              </div>
+            </div>
+          </section>
 
-        <section className="impactinvest-market">
-          <h2>Marché Cible</h2>
-          <p>
-            Notre marché principal concerne les entrepreneurs en quête de financement, ainsi que les citoyens 
-            et organisations cherchant des opportunités d'investissement dans des projets locaux en toute sécurité.
-          </p>
-        </section>
+        </main>
+      </div>
 
-        <section className="impactinvest-roadmap">
-          <h2>Feuille de Route</h2>
-          <ul>
-            <li>Lancement de la version bêta dans les 6 prochains mois.</li>
-            <li>Expansion régionale et internationale en Afrique de l'Ouest dans 12 à 18 mois.</li>
-          </ul>
-        </section>
-      </main>
-
-      <footer className="impactinvest-footer">
-        <p>
-          ImpactInvest : Rejoignez-nous pour révolutionner l'investissement et contribuer au développement 
-          économique local en bénéficiant de retours sur investissement transparents et sécurisés.
-        </p>
-      </footer>
     </div>
   );
 };
