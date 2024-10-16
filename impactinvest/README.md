@@ -1,70 +1,107 @@
-# Getting Started with Create React App
+# README - Intégration Backend ImpactInvest
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Introduction
 
-## Available Scripts
+Ce document décrit l'intégration du backend nouvellement conçu avec notre frontend existant pour le projet ImpactInvest. Il détaille la structure du projet mise à jour, les étapes d'intégration, et les considérations importantes.
 
-In the project directory, you can run:
+## 1. Structure du Projet
 
-### `npm start`
+Nous avons réorganisé la structure du projet pour accommoder l'intégration du backend. La nouvelle structure est la suivante :
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```
+impactinvest/
+│
+├── public/
+│   ├── index.html
+│   ├── css/
+│   │   └── styles.css
+│   ├── js/
+│   │   ├── main.js
+│   │   ├── projects.js
+│   │   ├── investments.js
+│   │   ├── auth.js
+│   │   └── blockchain.js
+│   └── assets/
+│       └── images/
+│
+├── src/
+│   ├── config/
+│   │   ├── database.js
+│   │   └── blockchain.js
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   ├── services/
+│   ├── middleware/
+│   └── app.js
+│
+├── contracts/
+│   └── ImpactInvest.sol
+│
+└── package.json
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 2. Intégration du Backend
 
-### `npm test`
+### a. Installation des Dépendances
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Exécutez la commande suivante pour installer les dépendances nécessaires :
 
-### `npm run build`
+```bash
+npm init -y
+npm install express mongoose dotenv jsonwebtoken bcryptjs web3 @truffle/contract
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### b. Configuration du Serveur
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Créez le fichier principal du serveur `src/app.js`. Ce fichier configurera Express, connectera à la base de données, et définira les routes API.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### c. Modification des Fichiers Frontend
 
-### `npm run eject`
+Mettez à jour vos fichiers JavaScript frontend pour utiliser la nouvelle API. Par exemple, dans `public/js/projects.js`, vous devrez remplacer les appels de données statiques par des appels API.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## 3. Gestion de l'Authentification
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Un nouveau fichier `public/js/auth.js` a été créé pour gérer l'authentification côté client. Ce fichier contient des fonctions pour l'inscription, la connexion, et la gestion des tokens JWT.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## 4. Intégration de la Blockchain
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Le fichier `public/js/blockchain.js` a été ajouté pour gérer les interactions avec la blockchain. Il contient des fonctions pour se connecter à Web3, charger le contrat intelligent, et effectuer des transactions.
 
-## Learn More
+## 5. Mise à Jour des Fichiers HTML
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Assurez-vous d'inclure les nouveaux fichiers JavaScript dans vos pages HTML. Voici un exemple pour `public/index.html` :
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ImpactInvest</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Votre contenu HTML existant -->
 
-### Code Splitting
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
+    <script src="/js/auth.js"></script>
+    <script src="/js/projects.js"></script>
+    <script src="/js/investments.js"></script>
+    <script src="/js/blockchain.js"></script>
+    <script src="/js/main.js"></script>
+</body>
+</html>
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Points Importants à Considérer
 
-### Analyzing the Bundle Size
+1. **Sécurité** : Assurez-vous de bien gérer l'authentification et les autorisations côté serveur.
+2. **Performance** : Optimisez les requêtes API et envisagez l'utilisation de caching si nécessaire.
+3. **Migration Future** : Cette approche permet une intégration progressive. Une migration vers une architecture plus moderne (comme React) peut être envisagée à l'avenir.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Prochaines Étapes
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Réviser et tester chaque composant de l'intégration.
+2. Mettre à jour la documentation API si nécessaire.
+3. Planifier des tests d'intégration pour s'assurer que le frontend et le backend fonctionnent correctement ensemble.
