@@ -1,25 +1,30 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
-import HomePage from './pages/HomePage';
-import InvestPage from './pages/InvestPage';
-import FunctioningPage from './pages/FunctioningPage';
-import PortfolioPage from './pages/PortfolioPage';
+const express = require('express');
+const mongoose = require('mongoose');
+const path = require('path');
+const dotenv = require('dotenv');
 
-function App() {
-  return (
-    <Router>
-      <NavBar />
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/invest" element={<InvestPage />} />
-        <Route path="/functioning" element={<FunctioningPage />} />
-        <Route path="/portfolio" element={<PortfolioPage />} />
-      </Routes>
-      <Footer /> {/* Footer should be inside Router */}
-    </Router>
-  );
-}
+dotenv.config();
 
-export default App;
+const app = express();
+
+// Middleware
+app.use(express.json());
+app.use(express.static(path.join(__dirname, '../public')));
+
+// Connect to MongoDB
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB'))
+  .catch(err => console.error('MongoDB connection error:', err));
+
+// Routes
+app.use('/api/auth', require('./routes/auth'));
+app.use('/api/projects', require('./routes/projects'));
+app.use('/api/investments', require('./routes/investments'));
+
+// Serve the frontend
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'));
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
