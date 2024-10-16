@@ -96,12 +96,3 @@ Assurez-vous d'inclure les nouveaux fichiers JavaScript dans vos pages HTML. Voi
 
 ## Points Importants à Considérer
 
-1. **Sécurité** : Assurez-vous de bien gérer l'authentification et les autorisations côté serveur.
-2. **Performance** : Optimisez les requêtes API et envisagez l'utilisation de caching si nécessaire.
-3. **Migration Future** : Cette approche permet une intégration progressive. Une migration vers une architecture plus moderne (comme React) peut être envisagée à l'avenir.
-
-## Prochaines Étapes
-
-1. Réviser et tester chaque composant de l'intégration.
-2. Mettre à jour la documentation API si nécessaire.
-3. Planifier des tests d'intégration pour s'assurer que le frontend et le backend fonctionnent correctement ensemble.
