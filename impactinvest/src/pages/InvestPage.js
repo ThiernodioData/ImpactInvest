@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ethers } from 'ethers';
-import InvestmentPlatform from '../../artifacts/contracts/InvestmentPlatform.sol/InvestmentPlatform.json';
+import InvestmentPlatform from '../contracts/InvestmentPlatform.sol/InvestmentPlatform.json';
 const InvestPage = () => {
   const [filter, setFilter] = useState('all');
   const [projects, setProjects] = useState([]);
