@@ -8,6 +8,8 @@ pragma solidity ^0.8.27;
  */
 contract ImpactInvest {
 
+    
+
     struct Campaign {
         address owner; // Propriétaire du projet
         string title; // Titre du projet
