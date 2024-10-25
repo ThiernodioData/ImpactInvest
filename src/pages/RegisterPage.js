@@ -72,7 +72,7 @@ function RegisterPage() {
                     </form>
                 </div>
                 <div className="card-footer text-center">
-                    <Link to="/" className="d-block mb-2">
+                    <Link to="/portfolio" className="d-block mb-2">
                         J'ai déjà un compte, Me connecter
                     </Link>
                     <small className="text-muted">© IDITECH Manager - ImpactInvest SN</small>
