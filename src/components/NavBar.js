@@ -45,7 +45,6 @@ const NavBar = () => {
             <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
             <button className="btn btn-outline-primary" type="submit">Search</button>
           </form>
-          <button className='btn btn-outline-danger ms-5'><span className="material-symbols-outlined">logout</span></button>
         </div>
       </div>
     </nav>

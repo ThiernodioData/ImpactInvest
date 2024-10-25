@@ -32,7 +32,7 @@ function PortfolioPage() {
             </form>
           </div>
           <div className="card-footer text-center">
-            <a href="#" className="d-block mb-2">Je n'ai pas de compte, Creer un compte</a>
+          <Link to="/register" className="d-block mb-2">Je n'ai pas de compte, Creer un compte</Link>
             <small className="text-muted">© IDITECH Manager - ImpactInvest SN</small>
           </div>
         </div>

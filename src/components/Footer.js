@@ -16,20 +16,20 @@ const Footer = () => {
               flagSrc="https://flagcdn.com/w320/sn.png"
               link="https://impactinst.sn"
             />
-            <FooterOffice 
+            {/* <FooterOffice 
               city="Paris"
               country="FRANCE"
               address="10 rue de Rivoli, 75004 Paris"
               flagSrc="https://flagcdn.com/w320/fr.png"
               link="https://impactinst.fr"
-            />
-            <FooterOffice 
+            /> */}
+            {/* <FooterOffice 
               city="Berlin"
               country="ALLEMAGNE"
               address="Friedrichstraße 123, 10117 Berlin"
               flagSrc="https://flagcdn.com/w320/de.png"
               link="https://impactinst.de"
-            />
+            /> */}
           </div>
 
           {/* Relation client */}
@@ -41,12 +41,12 @@ const Footer = () => {
               subtitle="POUR NOUS ÉCRIRE" 
               link="mailto:contact@impactinst.com"
             />
-            <FooterCTA 
+            {/* <FooterCTA 
               iconClass="fas fa-phone" 
               title="(+221) 33 123 4567" 
               subtitle="POUR NOUS TÉLÉPHONER" 
               link="tel:+221331234567"
-            />
+            /> */}
             <FooterCTA 
               iconClass="fas fa-calendar" 
               title="Rendez-vous en ligne" 
@@ -84,8 +84,6 @@ const Footer = () => {
             <FooterLink title="Conditions générales" link="/legal/conditions-generales" />
             <FooterLink title="Conflits d'intérêts" link="/legal/conflits-d-interets" />
             <FooterLink title="Recrutement" link="/recrutement" />
-            <FooterLink title="Espace presse" link="/presse" />
-            <FooterLink title="Cookies" link="javascript:openAxeptioCookies()" />
             <FooterLink title="Indicateurs de performance" link="/indicateurs-de-performance/" />
             <FooterLink title="Rapport d'impact" link="/rapport-d-impact.pdf" />
           </div>

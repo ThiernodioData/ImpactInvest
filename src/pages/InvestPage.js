@@ -54,8 +54,8 @@ const InvestPage = () => {
 
   return (
     <div>
-      <h1>Investir dans des projets à impact</h1>
-
+      <h1>     Investir dans des projets à impact <br></br> </h1>
+    
       {/* Section de filtre */}
       <div style={filterStyle}>
         <button

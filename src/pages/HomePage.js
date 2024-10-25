@@ -1,12 +1,9 @@
 import React from 'react';
-import logo from '../images/logo1.png'; // Assurez-vous de mettre le bon chemin ici
 import bg_gif from '../images/home.gif';
 import img1 from '../images/img4.jpg';
 import img2 from '../images/img3.jpg';
 import img3 from '../images/img8.jpg';
 import gif1 from '../images/gif1.gif';
-
-import Footer from '../components/Footer';
 
 const Homepage = () => {
   return (
@@ -27,10 +24,10 @@ const Homepage = () => {
                     Depuis sa création, ImpactInvest vous offre une opportunité d'investir de façon transparente et sécurisée. Sur notre plateforme d'investissement participatif basée sur la blockchain, financez des projets locaux à fort impact économique et social, en particulier dans les marchés émergents, comme le Sénégal, à partir de 10 euros.
                   </p>
                   <div className="arkefip-home-intro-cta">
-                    <a href="/placer-son-argent/">
+                    <a href="/invest/">
                       <button className="btn btn-outline-primary fw-bold m-5">Découvrir nos projets</button>
                     </a>
-                    <a href="/investisseur/nouveau/">
+                    <a href="/register">
                       <button className="btn btn-primary">Créer un compte</button>
                     </a>
                   </div>
@@ -44,17 +41,17 @@ const Homepage = () => {
           <div className="container bg-primary rounded-5 my-5">
             <div className="row text-white text-center rounded p-4 d-flex flex-row">
               <div className="col-md-4">
-                <h2 className="fw-bold">551 M€</h2>
+                <h2 className="fw-bold">#M€</h2>
                 <p>Montant financé</p>
                 <p>Par les investisseurs</p>
               </div>
               <div className="col-md-4">
-                <h2 className="fw-bold">Jusqu'à 9.5%</h2>
+                <h2 className="fw-bold">Jusqu'à #%</h2>
                 <p>D'intérêts annuels</p>
                 <p>Avant impôts</p>
               </div>
               <div className="col-md-4">
-                <h2 className="fw-bold">471</h2>
+                <h2 className="fw-bold">#</h2>
                 <p>Projets durables</p>
                 <p>Financés depuis sa création</p>
               </div>
@@ -77,7 +74,7 @@ const Homepage = () => {
                     <p className="arkefip-home-expertise-card-description">
                       Participez au financement de projets locaux à fort impact social et environnemental, et soutenez des communautés dans des pays émergents.
                     </p>
-                    <a href="/projects">
+                    <a href="/invest">
                       <button className="btn btn-primary">Découvrez nos projets</button>
                     </a>
                   </div>
@@ -89,7 +86,7 @@ const Homepage = () => {
                     <p className="arkefip-home-expertise-card-description">
                       Profitez d’un accompagnement sur mesure de nos experts qui vous guident tout au long de votre investissement.
                     </p>
-                    <a target="_blank" rel="noopener noreferrer" href="/contact/">
+                    <a  rel="noopener noreferrer" href="/contact/">
                       <button className="btn btn-primary">Contactez-nous</button>
                     </a>
                   </div>
@@ -101,7 +98,7 @@ const Homepage = () => {
                     <p className="arkefip-home-expertise-card-description">
                       Seuls les projets respectant nos critères rigoureux d'impact et de rentabilité sont proposés sur la plateforme.
                     </p>
-                    <a target="_blank" rel="noopener noreferrer" href="/methodology">
+                    <a  rel="noopener noreferrer" href="/functioning">
                       <button className="btn btn-primary">Découvrez notre méthodologie</button>
                     </a>
                   </div>
@@ -135,7 +132,7 @@ const Homepage = () => {
                     <div className="impactinvest-home-invest-steps-step-content">
                       <h2 className="impactinvest-home-invest-steps-step-title">Découvrez nos opportunités d'investissement</h2>
                       <p>
-                        ImpactInvest vous propose des projets soigneusement sélectionnés à fort impact social et environnemental. Explorez nos opportunités dans l'onglet <a href="/invest" target="_blank">Investir</a>.
+                        ImpactInvest vous propose des projets soigneusement sélectionnés à fort impact social et environnemental. Explorez nos opportunités dans l'onglet <a href="/invest" >Investir</a>.
                       </p>
                     </div>
                   </div>
