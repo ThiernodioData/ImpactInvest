@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import '../styles/InvestPage.css';  // CSS externalisé import '../styles/fonction.css'
+import parc from'../images/parc.webp';
+
 
 const InvestPage = () => {
   const navigate = useNavigate(); 
   const [filter, setFilter] = useState('all');
   const [projects] = useState([
-    { id: 1, name: 'Projet Énergie Solaire', description: 'Investissez dans un parc solaire en Afrique.', type: 'renewable' },
+    { id: 1, name: 'Projet Énergie Solaire', description: 'Investissez dans un parc solaire en Afrique.',image:'../images/parc.webp', type: 'renewable' },
     { id: 2, name: 'Projet Eau Potable', description: 'Soutenez l’accès à l’eau potable pour des communautés rurales.', type: 'social' },
     { id: 3, name: 'Projet Forêt Durable', description: 'Aidez à protéger les forêts et les communautés.', type: 'environmental' },
     { id: 4, name: 'Projet Éducation Afrique', description: 'Financer l’accès à l’éducation en Afrique.', type: 'africa' },
