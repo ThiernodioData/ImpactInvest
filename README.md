@@ -1,70 +1,115 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# ImpactInvest
 
-## Available Scripts
+## Description
+Notre plateforme d'investissement basée sur la blockchain vise à démocratiser l'accès aux projets d'investissement en permettant à chaque individu, peu importe son niveau de revenu, de participer directement à des projets à fort potentiel. En utilisant la transparence et la sécurité offertes par la blockchain, nous garantissons des transactions vérifiables et une gestion automatisée des investissements via des smart contracts. Les investisseurs auront la possibilité de soutenir des projets dans divers secteurs tout en bénéficiant de la simplicité et de la confiance qu'apporte la technologie décentralisée.
 
-In the project directory, you can run:
+## Prérequis
+Avant de commencer, assurez-vous d'avoir installé :
+- [Node.js](https://nodejs.org/) (v14.0.0 ou plus récent)
+- [npm](https://www.npmjs.com/) (généralement inclus avec Node.js)
+- L'extension navigateur [MetaMask](https://metamask.io/)
 
-### `npm start`
+## Installation
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Clonez le dépôt :
+```bash
+git clone https://github.com/ThiernodioData/ImpactInvest.git
+cd ImpactInvest
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Installez les dépendances :
+```bash
+# Installation des dépendances du projet
+npm install
 
-### `npm test`
+# Installation des dépendances spécifiques à la blockchain
+npm install --save-dev hardhat
+npm install @openzeppelin/contracts
+npm install ethers
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Configuration des Smart Contracts
 
-### `npm run build`
+1. Compilez les smart contracts :
+```bash
+npx hardhat compile
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Démarrez le réseau local :
+```bash
+npx hardhat node
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+3. Dans un nouveau terminal, déployez les contrats :
+```bash
+npx hardhat run scripts/deploy.js --network localhost
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Configuration du Frontend
 
-### `npm run eject`
+1. Démarrez le serveur de développement React :
+```bash
+npm start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+L'application devrait maintenant être accessible à l'adresse `http://localhost:3000`
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Structure du Projet
+```
+projet/
+├── contracts/              # Smart contracts
+│   └── UserManagement.sol
+├── scripts/               # Scripts de déploiement
+├── src/
+│   ├── components/        # Composants React
+│   ├── services/          # Services blockchain
+│   └── App.js
+├── hardhat.config.js      # Configuration Hardhat
+└── package.json
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Configuration
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+1. Assurez-vous que MetaMask est connecté au bon réseau :
+   - Pour le développement local : Connectez-vous à `localhost:8545`
+   - ID du réseau : 31337
+   - ID de chaîne : 1337
 
-## Learn More
+2. Importez un compte de test en utilisant les clés privées fournies par le nœud Hardhat
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Problèmes Courants et Solutions
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Si vous rencontrez l'erreur "Module not found" :
+   - Vérifiez que vous avez exécuté `npx hardhat compile`
+   - Vérifiez que les chemins d'importation dans vos services sont corrects
+   - Vérifiez que tous les artifacts des contrats sont générés
 
-### Code Splitting
+2. Problèmes de connexion MetaMask :
+   - Assurez-vous d'être connecté au bon réseau
+   - Réinitialisez votre compte dans MetaMask si vous avez des problèmes de nonce
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+3. Dépendances manquantes :
+   - Exécutez `npm install` pour installer toutes les dépendances
+   - Installez spécifiquement les packages manquants mentionnés dans les messages d'erreur
 
-### Analyzing the Bundle Size
+## Comment Contribuer
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+1. Forkez le dépôt
+2. Créez votre branche de fonctionnalité (`git checkout -b feature/super-fonctionnalite`)
+3. Committez vos modifications (`git commit -m 'Ajout d'une super fonctionnalité'`)
+4. Poussez vers la branche (`git push origin feature/super-fonctionnalite`)
+5. Ouvrez une Pull Request
 
-### Making a Progressive Web App
+## Licence
+[Licence MIT](LICENSE)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Contact
+Ibrahima Tine - ibrahimatine29@gmail.com
 
-### Advanced Configuration
+Thierno Idrissa Diallo - 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Amadou Tidiane Diallo - amadoutidianediallo662@gmail.com
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Lien du projet : [https://github.com/ThiernodioData/ImpactInvest.git](https://github.com/ThiernodioData/ImpactInvest.git)
